@@ -1,0 +1,76 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: filestore-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/filestore
+    username: admin
+    password: secret123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+      file-size-threshold: 2MB
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 60000
+
+filestore:
+  storage:
+    type: minio
+    minio:
+      endpoint: http://localhost:9000
+      access-key: minioadmin
+      secret-key: minioadmin
+      bucket-name: filestore-bucket
+
+  file:
+    default-expiry-hours: 24
+    max-file-size-bytes: 104857600
+    allowed-extensions:
+      - pdf
+      - jpg
+      - jpeg
+      - png
+      - gif
+      - doc
+      - docx
+      - txt
+      - zip
+
+logging:
+  level:
+    com.filestore: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
