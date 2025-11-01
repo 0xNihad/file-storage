@@ -296,8 +296,8 @@ docker run -p 8080:8080 filestore-backend
 
 ## 📞 Contact
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@0xNihad](https://github.com/0xNihad)
+- Email: mirzazadanihad1@gmail.com
 
 ---
 
