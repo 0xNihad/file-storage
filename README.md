@@ -49,7 +49,7 @@ A secure file storage and sharing service with password protection, auto-expiry,
 
 **1. Clone & Start Services**
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/0xNihad/file-storage>
 cd filestore-backend
 docker-compose up -d
 ```
