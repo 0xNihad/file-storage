@@ -297,7 +297,6 @@ docker run -p 8080:8080 filestore-backend
 ## 📞 Contact
 
 - GitHub: [@0xNihad](https://github.com/0xNihad)
-- Email: mirzazadanihad1@gmail.com
 
 ---
 
